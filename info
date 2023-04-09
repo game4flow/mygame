@@ -1,0 +1,13 @@
+sleep 2
+
+# set vars
+if [ ! $NODENAME ]; then
+	read -p "Enter node name: " NODENAME
+	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
+fi
+echo "export WORKSPACE=testnet" >> $HOME/.bash_profile
+echo "export PUBLIC_IP=$(curl -s ifconfig.me)" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
+echo -e "\e[1m\e[32m1. Updating dependencies... \e[0m" && sleep 1
+sudo apt update && sudo apt upgrade -y
