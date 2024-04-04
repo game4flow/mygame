@@ -1,3 +1,4 @@
+###
 #!/bin/bash
 for (( ;; )); do
 	echo -e "\033[0;32mCollecting rewards!\033[0m"
